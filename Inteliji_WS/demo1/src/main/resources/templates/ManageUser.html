@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Thống kê số liệu</h1>
+<h3 >AddressUser:<a th:href="@{/Admin/ManageUser/ListUser}" th:text="${user}"></a></h3>
+<h3 >AddressF0:<a th:href="@{/Admin/ManageUser/ListF0}" th:text="${f0}"></a></h3>
+<h3 >AddressF1:<a th:href="@{/Admin/ManageUser/ListF1}" th:text="${f1}"></a></h3>
+<table  style="border: 1px solid black">
+    <tr>
+        <th>STT</th>
+        <th>Tên</th>
+        <th>BirthDay</th>
+        <th>Email</th>
+    </tr>
+
+    <tr th:each="row, count : ${list}">
+        <td th:text="${row.getUser_id()}"></td>
+        <td th:text="${row.getFullname()}"></td>
+        <td th:text="${row.getBirthday()}"></td>
+        <td th:text="${row.getEmail()}"></td>
+    </tr>
+</table>
+</body>
+</html>

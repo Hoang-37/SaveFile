@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Thống kê số liệu</h1>
+ <h3 >AddressUser:<a th:href="@{/Admin/ManageAddress/AddressUser}" th:text="${number_user}"></a></h3>
+<h3 >AddressF0:<a th:href="@{/Admin/ManageAddress/AddressF0}" th:text="${number_f0}"></a></h3>
+ <h3 >AddressF1:<a th:href="@{/Admin/ManageAddress/AddressF1}" th:text="${number_f1}"></a></h3>
+<div th:switch="${static}">
+
+<table  th:case="'addressuser'" style="border: 1px solid black">
+    <tr>
+        <th>STT</th>
+        <th>Address</th>
+        <th>Number_User</th>
+
+
+    </tr>
+
+    <tr th:each="row, count : ${listaddress}">
+
+        <td th:text="${count.index +1}"></td>
+        <td th:text="${row.getAddress()}"></td>
+        <td > <a th:href="@{/Admin/ManageAddress/ListUser/{address}(address= ${row.address})}"  th:text="${row.getNumber_user()}"></a></td>
+
+    </tr>
+</table>
+
+    <table th:case="'addressf0'" style="border: 1px solid black">
+        <tr>
+            <th>STT</th>
+            <th>Address</th>
+            <th>Number_F0</th>
+
+
+        </tr>
+
+        <tr th:each="row, count : ${listaddressf0}">
+
+            <td th:text="${count.index +1}"></td>
+            <td th:text="${row.getAddress()}"></td>
+            <td ><a th:href="@{/Admin/ManageAddress/ListF0/{address}(address= ${row.address})}"  th:text="${row.getNumber_f0()}"></a></td>
+        </tr>
+    </table>
+    <table th:case="'addressf1'" style="border: 1px solid black">
+        <tr>
+            <th>STT</th>
+            <th>Address</th>
+            <th>Number_F1</th>
+
+
+        </tr>
+
+        <tr th:each="row, count : ${listaddressf1}">
+
+            <td th:text="${count.index +1}"></td>
+            <td th:text="${row.getAddress()}"></td>
+            <td ><a th:href="@{/Admin/ManageAddress/ListF1/{address}(address= ${row.address})}"  th:text="${row.getNumber_f1()}"></a></td>
+        </tr>
+    </table>
+    <table th:case="'list'" style="border: 1px solid black">
+        <tr>
+            <th>STT</th>
+            <th>Tên</th>
+            <th>BirthDay</th>
+            <th>Email</th>
+        </tr>
+
+        <tr th:each="row, count : ${list}">
+            <td th:text="${count.index +1}"></td>
+            <td th:text="${row.getFullname()}"></td>
+            <td th:text="${row.getBirthday()}"></td>
+            <td th:text="${row.getEmail()}"></td>
+        </tr>
+    </table>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/SearchAddress}">
+    <input type="text" name="SearchAddress">
+    <button>Gui</button>
+</form>
+<table style="border: 1px solid black">
+    <tr>
+        <th>id</th>
+
+        <th>Address</th>
+        <th>Number_User</th>
+
+    </tr>
+
+    <tr th:each="row, count : ${listaddress}">
+        <td th:text="${row.getAddr_id()}"></td>
+        <td th:text="${row.getAddress()}"></td>
+        <td th:text="${row.getNumber_user()}"></td>
+        <td><a th:href="@{/User/DetailsAddress/{id}(id= ${row.addr_id})}">Xem<a/></td>
+    </tr>
+</table>
+</body>
+</html>

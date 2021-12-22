@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <h3 th:text="${address.address}"></h3>
+    Number_User: <a th:href="@{/User/Number_User/{address}(address=${address.address})}" th:text="${address.number_user}"></a>
+    <table style="border: 1px solid black">
+        <tr>
+            <th>STT</th>
+            <th>Tên</th>
+            <th>Address</th>
+            <th>Birthday</th>
+
+        </tr>
+
+        <tr th:each="row, count : ${listuser}">
+
+            <td th:text="${count.index +1}"></td>
+            <td th:text="${row.getFullname()}"></td>
+            <td th:text="${row.getAddress()}"></td>
+            <td th:text="${row.getBirthday()}"></td>
+            <td><a th:href="@{/User/DetailsUser/{id}(id= ${row.user_id})}">Xem<a/></td>
+
+        </tr>
+    </table>
+
+</div>
+</body>
+</html>

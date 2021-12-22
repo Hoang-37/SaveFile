@@ -1,0 +1,20 @@
+!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+   <h1>Register</h1>
+<form th:action="@{/SaveRegister}" >
+    <input type="text" th:field="${user.fullname}" placeholder="fullname">
+    <input type="text" th:field="${user.birthday}" placeholder="birthday">
+    <input type="text" th:field="${acc.username}" placeholder="username">
+    <input type="text" th:field="${acc.password}" placeholder="password">
+    <input type="text" th:field="${user.cmnd}" placeholder="cmnd">
+    <input type="text" th:field="${user.address}" placeholder="address">
+    <input type="text" th:field="${user.email}" placeholder="email">
+    <button>Gui</button>
+</form>
+</body>
+</html>

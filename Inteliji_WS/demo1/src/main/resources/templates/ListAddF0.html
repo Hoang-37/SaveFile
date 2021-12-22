@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div>
+    <table style="border: 1px solid black">
+        <tr>
+            <th>STT</th>
+            <th>Tên</th>
+            <th>Address</th>
+            <th>Birthday</th>
+
+        </tr>
+
+        <tr th:each="row, count : ${listNoF0}">
+
+            <td th:text="${count.index +1}"></td>
+            <td th:text="${row.getFullname()}"></td>
+            <td th:text="${row.getAddress()}"></td>
+            <td th:text="${row.getBirthday()}"></td>
+            <td><a th:href="@{/Admin/AddF0/{id}(id= ${row.user_id})}">Thêm<a/></td>
+
+        </tr>
+    </table>
+</div>
+</body>
+</html>

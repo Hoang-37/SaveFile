@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3><a th:href="@{/Admin/ManageObjectF0/ListAddF0}">Thêm F0</a></h3>
+<h3><a th:href="@{/Admin/ManageObjectF0/ListF0}">Xem F0</a></h3>
+<h3><a th:href="@{/Admin/ManageObjectF0/ListDeleteF0}">Xoa F0</a></h3>
+
+<div th:switch="${static}">
+    <table th:case="'look'" style="border: 1px solid black">
+        <tr>
+            <th>STT</th>
+            <th>Tên</th>
+            <th>Address</th>
+            <th>Birthday</th>
+
+        </tr>
+
+        <tr th:each="row, count : ${listf0}">
+
+            <td th:text="${row.getUser_id()}"></td>
+            <td th:text="${row.getFullname()}"></td>
+            <td th:text="${row.getAddress()}"></td>
+            <td th:text="${row.getBirthday()}"></td>
+            <td><a th:href="@{/Admin/ManageObjectF0/ListF1/{id}(id= ${row.user_id})}">Xem F1<a/></td>
+
+        </tr>
+    </table>
+    <table th:case="'add'" style="border: 1px solid black">
+        <tr>
+            <th>STT</th>
+            <th>Tên</th>
+            <th>Address</th>
+            <th>Birthday</th>
+
+        </tr>
+
+        <tr th:each="row, count : ${listNoF0}">
+
+            <td th:text="${row.getUser_id()}"></td>
+            <td th:text="${row.getFullname()}"></td>
+            <td th:text="${row.getAddress()}"></td>
+            <td th:text="${row.getBirthday()}"></td>
+            <td><a th:href="@{/Admin/ManageObjectF0/AddF0/{id}(id= ${row.user_id})}">Thêm<a/></td>
+
+        </tr>
+    </table>
+    <table th:case="'f1'"  style="border: 1px solid black">
+        <tr>
+            <th>STT</th>
+            <th>Tên</th>
+            <th>Address</th>
+            <th>Birthday</th>
+
+        </tr>
+
+        <tr th:each="row, count : ${listf1}">
+
+            <td th:text="${row.getUser_id()}"></td>
+            <td th:text="${row.getFullname()}"></td>
+            <td th:text="${row.getAddress()}"></td>
+            <td th:text="${row.getBirthday()}"></td>
+
+
+        </tr>
+    </table>
+    <table th:case="'delete'" style="border: 1px solid black">
+        <tr>
+            <th>STT</th>
+            <th>Tên</th>
+            <th>Address</th>
+            <th>Birthday</th>
+
+        </tr>
+
+        <tr th:each="row, count : ${listdeletef0}">
+
+            <td th:text="${row.getUser_id()}"></td>
+            <td th:text="${row.getFullname()}"></td>
+            <td th:text="${row.getAddress()}"></td>
+            <td th:text="${row.getBirthday()}"></td>
+            <td><a th:href="@{/Admin/ManageObjectF0/DeleteF0/{id}(id= ${row.user_id})}">Xoa F0<a/></td>
+
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>
