@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Danh sách F0</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="1.UI/css/common/main.css">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../Resource/font/fontawesome-5.15.1/css/all.min.css">
+  </head>
+  <body>
+    <div class="main">
+        <div class="row">
+            <!-- side bar -->
+            <div class="left-bar">              
+              <ul class="list-menu"> 
+                <li class="menu-item row active">
+                  <img class="icon" height="20px" src="../../Resource/icon/dashboard.png" alt="">
+                  <div class="text-menu">Tổng quan</div>
+                </li>
+                <li class="menu-item row">
+                  <img src="../../Resource/icon/report.png" height="20px" alt="" class="icon">
+                  <div class="text-menu">Tìm kiếm người dùng</div>
+                </li>
+                <li class="menu-item row">
+                  <img class="icon" height="20px" src="../../Resource/icon/dashboard.png" alt="">
+                  <div class="text-menu">Kiểm tra phạm vi</div>
+                </li>
+                <li class="menu-item row">
+                  <img class="icon" height="20px" src="../../Resource/icon/dic-employee.png" alt="">
+                  <div class="text-menu">Kê khai lịch trình</div>
+                </li>
+                <li class="menu-item row">
+                  <img class="icon" height="20px" src="../../Resource/icon/dic-employee.png" alt="">
+                  <div class="text-menu">Lịch sử kê khai</div>
+                </li>
+                <!-- <li class="menu-item row">
+                  <img class="icon" height="20px" src="../../Resource/icon/setting.png" alt="">
+                  <div class="text-menu">Thiết lập hệ thống</div>
+                </li>                 -->
+              </ul>
+              <div class="buttonMinisize"><i class="fas fa-chevron-left"></i></div>              
+            </div>
+            <!-- header  -->
+            <div class="top-right row">
+              <div class="row top-left-menu">
+                <div class="toggle-icon">
+                  <img height="24px" src="../../Resource/img/toggle.png" alt="">
+                </div>
+                <img height="24px" src="../../Resource/img/cukcuk-logo.png" alt="">
+              </div>
+              <div class="left my-custom-select">   
+                <div class="select-selected">
+                  <input type="text" id="restaurant">                      
+                </div>
+                <div class="select-items select-hide restaurant">
+                  <div value="nhbd" class="same-as-selected">Thanh Xuân</div>
+                  <div value="nhbt">Bách Khoa</div>
+                </div>
+              </div>                
+              <div class="user-top d-inline">
+                <i class="far fa-bell icon" style="padding-right: 16px;"></i>
+                <img height="24px" style="margin-right: 16px;" src="../../Resource/icon/avatar-default.png" alt="" class="avatar">
+                <span class="user" style="margin-right: 16px;">Hoàng Văn Bút</span>
+                <img src="../../Resource/icon/option.png" alt="" style="margin-right: 16px;">
+              </div>
+            </div>
+            <!-- main content  -->
+            <div class="right-content">              
+              <div class="main-content">
+                <div class="row" style="height: 100%;">
+                  <div class="title">Danh sách F0</div>
+                  <div class="button" style="margin-left: auto;" id="addEmployee" accesskey="a">
+                    <i class="fas fa-user-plus"></i>
+                    Thêm F0
+                  </div>
+                </div>   
+                <!-- search text and selection -->
+                <div class="row search-form">
+                  <div class="search-box" style="margin-right: 15px;">
+                    <img src="../../Resource/icon/search.png" width="16px" alt="">
+                    <input class="" placeholder="Tìm kiếm theo Mã, Tên hoặc Số điện thoại"></input>
+                    <div class="clearBtn"><img height="13px" src="../../Resource/icon/x.svg" alt=""></div>
+                  </div>
+                  <!-- <div class="my-custom-select" style="margin-right: 15px;">
+                    <div class="select-selected">
+                      <input type="text" id="filterDepartment">                      
+                    </div>
+                    <div class="select-items select-hide filterDepartment"></div>
+                  </div> -->
+                  
+                  <div class="my-custom-select" style="margin-right: 15px;">
+                    <div class="select-selected">
+                      <input type="text" id="filterPosition">                      
+                    </div>
+                    <div class="select-items select-hide filterPosition">
+                      <div value="all" class="same-as-selected">Nghề nghiệp</div>
+                      <div value="pns">Thu ngân</div>
+                      <div value="phc">Giám đốc</div>
+                      <div value="pkd">Nhân viên kinh doanh</div>
+                    </div>
+                  </div>                  
+                  <div class="refresh" style="margin-left: auto;">
+                    <img src="../../Resource/icon/refresh.png" alt="">
+                  </div>
+                </div> 
+                <!-- table show list employee  -->
+                <div class="table-container">
+                  <table class="my-table" id="listEmployee">
+                    <thead>
+                      <tr>            
+                        <th scope="col">Họ và tên</th>
+                        <th scope="col">Giới tính</th>
+                        <th scope="col">Ngày sinh</th>
+                        <th scope="col">Điện thoại</th>
+                        <th scope="col">Nghề nghiệp</th>
+                        <th scope="col">Địa chỉ</th>
+                        <th scope="col">Những người tiếp xúc</th>
+                        <th scope="col">Những nơi đi qua</th>
+                    
+                      </tr>
+                    </thead>
+                    <tbody></tbody>
+                  </table>
+                </div>
+                <!-- paging  -->
+                <div class="pageable row">
+                  <div class="showing">Hiển thị <span><b>1-10/10000</b></span> nhân viên</div>
+                  <div class="page row">
+                    <img class="changePage" src="../../Resource/icon/btn-firstpage.svg" alt="">
+                    <img class="changePage" src="../../Resource/icon/btn-prev-page.svg" alt="">
+                    <div class="pageNum active">1</div>
+                    <div class="pageNum">2</div>
+                    <div class="pageNum">3</div>
+                    <div class="pageNum">4</div>
+                    <img class="changePage" src="../../Resource/icon/btn-next-page.svg" alt="">
+                    <img class="changePage" src="../../Resource/icon/btn-lastpage.svg" alt="">
+                  </div>
+                  <div class="pagesize">
+                    <b>10</b> nhân viên/trang
+                  </div>
+                </div>             
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal xem chi tiet F0 -->
+    <div id="detail" class="mymodal">
+      <div class="my-modal-content">
+        <div class="my-modal-header">
+          <div>
+            <img src="../../Resource/icon/x.svg" alt="" style="float: right;" id="closeBtn">
+          </div>          
+          <div class="title my-modal-title">Thông tin F0</div>
+        </div>
+        <form action="" enctype="multipart/form-data" id="addEmployeeForm">
+          <div class="row" style="align-items: flex-start;">
+            <div class="left-modal col-sm-2">
+              <img src="../../Resource/img/default-avatar.jpg" alt="" id="imgavatar" class="modal-avatar">        
+              <p>(Vui lòng chọn ảnh có định dạng .jpg, .jpeg, .png, .gif.)</p>
+              <input type="file" style="display: none;" id="avatar">
+            </div>
+            <div class="right-modal col-sm-10">
+              <div class="title2 col main-label">A. THÔNG TIN CHUNG: <div class="green-line"></div></div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="employeeCode">Mã nhân viên (<span style="color: red;">*</span>)</label>
+                    <div class="search-box">
+                      <input type="text" name="employeeCode" id="employeeCode" class="form-input" placeholder="Mã nhân viên" disabled required>
+                      <div class="clearBtn"><img height="13px" src="../../Resource/icon/x.svg" alt=""></div>
+                    </div>                  
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <div class="form-group">
+                      <label for="fullname">Họ và tên (<span style="color: red;">*</span>)</label>
+                      <div class="search-box">
+                        <input type="text" name="fullname" id="fullname" class="form-input" placeholder="Họ và tên" required>
+                        <div class="clearBtn"><img height="13px" src="../../Resource/icon/x.svg" alt=""></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="birthDate">Ngày sinh</label>
+                    <div class="search-box">
+                      <input type="date" name="birthDate" id="birthDate" class="form-input" required>
+                      <div class="clearBtn"><img height="13px" src="../../Resource/icon/x.svg" alt=""></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <div class="form-group">
+                      <label for="fullname">Giới tính</label>
+                      <div class="my-custom-select">
+                        <div class="select-selected">
+                          <input type="text" id="gender" selected-value="1" required>                      
+                        </div>
+                        <div class="select-items select-hide gender">
+                          <div value="1" class="same-as-selected">Nam</div>
+                          <div value="2">Nữ</div>
+                          <div value="3">Khác</div>
+                        </div>
+                      </div>                    
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="identityNumber">Số CMTND/ Căn cước (<span style="color: red;">*</span>)</label>
+                    <div class="search-box">
+                      <input type="number" name="identityNumber" id="identityNumber" class="form-input" placeholder="CNTND/ Căn cước" required>
+                      <div class="clearBtn"><img height="13px" src="../../Resource/icon/x.svg" alt=""></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <div class="form-group">
+                      <label for="identityDate">Ngày cấp</label>
+                      <div class="search-box">
+                        <input type="date" name="identityDate" id="identityDate" class="form-input" required>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="identityPlace">Nơi cấp</label>
+                    <div class="search-box">
+                      <input type="text" name="identityPlace" id="identityPlace" class="form-input" placeholder="Nơi cấp" required>
+                      <div class="clearBtn"><img height="13px" src="../../Resource/icon/x.svg" alt=""></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="email">Email (<span style="color: red;">*</span>)</label>
+                    <div class="search-box">
+                      <input type="text" name="email" id="email" class="form-input" placeholder="Email" required>
+                      <div class="clearBtn"><img height="13px" src="../../Resource/icon/x.svg" alt=""></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <div class="form-group">
+                      <label for="phoneNumber">Số điện thoại (<span style="color: red;">*</span>)</label>
+                      <div class="search-box">
+                        <input type="number" name="phoneNumber" id="phoneNumber" class="form-input" placeholder="Số điện thoại" required>
+                        <div class="clearBtn"><img height="13px" src="../../Resource/icon/x.svg" alt=""></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="title2 col main-label">B. THÔNG TIN CÔNG VIỆC:<div class="green-line"></div></div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="position">Vị trí</label>
+                    <div class="my-custom-select">
+                      <div class="select-selected">
+                        <input type="text" id="position" selected-value="1" required>                      
+                      </div>
+                      <div class="select-items select-hide gender">
+                        <div value="1" class="same-as-selected">Giám đốc</div>
+                        <div value="2">Nhân viên kinh doanh</div>
+                        <div value="3">Lập trình viên</div>
+                      </div>
+                    </div>                  
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <div class="form-group">
+                      <label for="department">Phòng ban</label>
+                      <div class="my-custom-select">
+                        <div class="select-selected">
+                          <input type="text" id="department" selected-value="0" required>                      
+                        </div>
+                        <div class="select-items select-hide gender">
+                        </div> 
+                      </div>    
+                                    
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="personalTaxCode">Mã số thuế cá nhân</label>
+                    <div class="search-box">
+                      <input type="number" name="personalTaxCode" id="personalTaxCode" class="form-input" placeholder="Mã số thuế cá nhân" required>
+                      <div class="clearBtn"><img height="13px" src="../../Resource/icon/x.svg" alt=""></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <div class="form-group">
+                      <label for="salary">Mức lương cơ bản</label>
+                      <div class="search-box">
+                        <input type="text" name="salary" id="salary" class="form-input" placeholder="Mức lương cơ bản" required>
+                        <span>(VNĐ)</span>
+                      </div>                                        
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="joinDate">Ngày gia nhập công ty</label>
+                    <div class="search-box">
+                      <input type="date" name="joinDate" id="joinDate" class="form-input" required>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <div class="form-group">
+                      <label for="workStatus">Tình trạng công việc</label>
+                      <div class="my-custom-select">
+                        <div class="select-selected">
+                          <input type="text" id="workStatus" selected-value="1" required>                      
+                        </div>
+                        <div class="select-items select-hide gender">
+                          <div value="1" class="same-as-selected">Đang làm việc</div>
+                          <div value="2">Đang học việc</div>
+                          <div value="3">Đã nghỉ việc</div>
+                        </div>
+                      </div>                    
+                    </div>
+                  </div>
+                </div>
+              </div>            
+            </div>
+            <div class="my-modal-bottom">
+              <div class="cancel" id="cancelBtn">Hủy</div>
+              <div class="button" id="submitBtn">
+                <i class="far fa-save"></i> Lưu
+              </div>
+            </div>
+          </div>
+      </form>
+      </div>      
+    </div>
+
+    <!-- dival JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="../../lib/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <!-- my script  -->
+    <script src="../js/service/Api.js" type="module"></script>
+    <script src="1.UI/js/page/index.js" type="module"></script>
+    <script src="1.UI/js/page/fetchAPI.js" type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Danh sách F0</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="../css/common/main.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../Resource/font/fontawesome-5.15.1/css/all.min.css">
+
+    <!-- jqueryUI css  -->
+    <link rel="stylesheet" href="../../lib/jquery-ui-1.12.1.custom/jquery-ui.min.css">
+</head>
+<body>
+<div class="main">
+    <div class="row">
+        <!-- side bar -->
+        <div class="left-bar">
+            <ul class="list-menu">
+                <li class="menu-item row active" onclick="kkclick()">
+                    <img class="icon" height="20px" src="../../Resource/icon/dashboard.png" alt="">
+                    <div class="text-menu">Lịch sử kê khai</div>
+                    <script>
+                        function kkclick() {
+                            location.assign("http://127.0.0.1:5500/Front-end/2.JS/html/lichsukekhai.html");
+                        }
+                    </script>
+                </li>
+                <li class="menu-item row" onclick="ndclick()">
+                    <img src="../../Resource/icon/report.png" height="20px" alt="" class="icon">
+                    <div class="text-menu">Tìm kiếm người dùng</div>
+                    <script>
+                        function ndclick() {
+                            location.assign("http://127.0.0.1:5500/Front-end/2.JS/html/timkiemnguoidung.html");
+                        }
+                    </script>
+                </li>
+                <li class="menu-item row"  onclick="pvclick()">
+                    <img class="icon" height="20px" src="../../Resource/icon/dashboard.png" alt="">
+                    <div class="text-menu">Kiểm tra phạm vi</div>
+                    <script>
+                        function pvclick() {
+                            location.assign("http://127.0.0.1:5500/Front-end/2.JS/html/kiemtraphamvi.html");
+                        }
+                    </script>
+                </li>
+                <li class="menu-item row" onclick="dcclick()">
+                    <img class="icon" height="20px" src="../../Resource/icon/dic-employee.png" alt="">
+                    <div class="text-menu">Quản lý địa chỉ</div>
+                    <script>
+                        function dcclick() {
+                            location.assign("http://127.0.0.1:5500/Front-end/2.JS/html/quanlidiachi.html");
+                        }
+                    </script>
+                </li>
+                <li class="menu-item row" onclick="F0click()">
+                    <img class="icon" height="20px" src="../../Resource/icon/dic-employee.png" alt="">
+                    <div class="text-menu">Danh sách F0</div>
+                    <script>
+                        function F0click() {
+                            location.assign("http://127.0.0.1:5500/Front-end/2.JS/html/quanliF0.html");
+                        }
+                    </script>
+                </li>
+                <li class="menu-item row"  onclick="F1click()">
+                    <img class="icon" height="20px" src="../../Resource/icon/setting.png" alt="">
+                    <div class="text-menu">Danh sách F1</div>
+                    <script>
+                        function F1click() {
+                            location.assign("http://127.0.0.1:5500/Front-end/2.JS/html/quanliF1.html");
+                        }
+                    </script>
+                </li>
+            </ul>
+            <div class="buttonMinisize"><i class="fas fa-chevron-left"></i></div>
+        </div>
+        <!-- header  -->
+        <div class="top-right row">
+            <div class="row top-left-menu">
+                <div class="toggle-icon">
+                    <img height="24px" src="../../Resource/img/toggle.png" alt="">
+                </div>
+                <img height="24px" src="../../Resource/img/cukcuk-logo.png" alt="">
+            </div>
+            <div class="left my-custom-select" name-value="RestaurantId" name-text="RestaurantName" id="restaurant">
+                <div class="select-selected">
+                    <input type="text">
+                </div>
+                <div class="select-items select-hide restaurant">
+                    <div value="nhbd" class="same-as-selected">Thanh Xuân</div>
+                    <div value="nhbt">Bách Khoa</div>
+                </div>
+                <span class="select-icon"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="user-top d-inline">
+                <i class="far fa-bell icon" style="padding-right: 16px;"></i>
+                <img height="24px" style="margin-right: 16px;" src="../../Resource/icon/avatar-default.png" alt="" class="avatar">
+                <span class="user" style="margin-right: 16px;">Hoàng Văn Bút</span>
+                <img src="../../Resource/icon/option.png" alt="" style="margin-right: 16px;">
+            </div>
+        </div>
+        <!-- main content  -->
+        <div class="right-content">
+            <div class="main-content">
+                <div class="row" style="height: 100%;">
+                    <div class="title">Tìm kiếm người dùng</div>
+                </div>
+                <!-- search text and selection -->
+                <div class="row search-form">
+                    <div class="search-box" style="margin-right: 15px;">
+                        <img src="../../Resource/icon/search.png" width="16px" alt="">
+                        <input class="" placeholder="Tìm kiếm theo Mã, Tên hoặc Số điện thoại"></input>
+                        <div class="clearBtn"><img height="13px" src="../../Resource/icon/x.svg" alt=""></div>
+                    </div>
+                    <!-- <div class="my-custom-select" style="margin-right: 15px;" id="filterDepartment" url="http://cukcuk.manhnv.net/api/Department"
+                    default-value="0" default-text="Tất cả phòng ban" name-value="DepartmentId" name-text="DepartmentName">
+                      <div class="select-selected">
+                        <input type="text">
+                        <div class="clearBtn"><img height="13px" src="../../Resource/icon/x.svg" alt=""></div>
+                      </div>
+                      <div class="select-items select-hide filterDepartment"></div>
+                      <span class="select-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div> -->
+
+                    <div class="my-custom-select" style="margin-right: 15px;" id="filterPosition" url="http://cukcuk.manhnv.net/v1/Positions"
+                         default-value="0" default-text="Tất cả vị trí" name-value="PositionId" name-text="PositionName">
+                        <div class="select-selected">
+                            <input type="text">
+                            <div class="clearBtn"><img height="13px" src="../../Resource/icon/x.svg" alt=""></div>
+                        </div>
+                        <div class="select-items select-hide filterPosition">
+                            <div value="all" class="same-as-selected">F0</div>
+                            <div value="pns">F1</div>
+                        </div>
+                        <span class="select-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div style="margin-left: auto; display: flex;">
+                        <div class="refresh" style="margin-right: 15px" id="deleteBtn">
+                            <i class="far fa-trash-alt deleteBtn"></i>
+                        </div>
+                        <div class="refresh" id="refresh">
+                            <img src="../../Resource/icon/refresh.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <!-- table show list employee  -->
+                <div class="table-container">
+                    <table class="my-table" id="listEmployee">
+                        <thead>
+                        <tr>
+                            <th scope="col" class="checkbox">
+                                <span class="custom-checkbox" id="select-all"><i class="fas fa-check"></i></span>
+                            </th>
+                            <th scope="col" td-data="EmployeeCode">Mã </th>
+                            <th scope="col" td-data="FullName">Họ và tên</th>
+                            <th scope="col" td-data="GenderName">Giới tính</th>
+                            <th scope="col" td-data="DateOfBirth" format="date">Ngày sinh</th>
+                            <th scope="col" td-data="PhoneNumber">Điện thoại</th>
+                            <th scope="col" td-data="Email">Nghề nghiệp</th>
+                            <th scope="col" td-data="PositionName">Địa chỉ</th>
+                            <th scope="col" td-data="Salary" format="salary">Những người tiếp xúc</th>
+                            <th scope="col" td-data="WorkStatus" format="work-status">Những nơi đi qua</th>
+                        </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <!-- paging  -->
+                <div class="pageable row">
+                    <div class="showing">Hiển thị <span><b>1-10/10000</b></span> nhân viên</div>
+                    <div class="page row">
+                        <img class="changePage" id="firstPage" src="../../Resource/icon/btn-firstpage.svg" alt="">
+                        <img class="changePage" id="prevPage" src="../../Resource/icon/btn-prev-page.svg" alt="">
+                        <div class="pageNums">
+                        </div>
+                        <img class="changePage" id="nextPage" src="../../Resource/icon/btn-next-page.svg" alt="">
+                        <img class="changePage" id="lastPage" src="../../Resource/icon/btn-lastpage.svg" alt="">
+                    </div>
+                    <div class="pagesize">
+                        <input type="number" min="10" step="10" value="10">
+                        <span>nhân viên/trang</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- modal xem chi tiet nhan vien -->
+<div id="m-dialog-employee" title="Thông tin khai báo">
+    <!-- <div class="my-modal-header">
+      <div>
+        <img src="../../Resource/icon/x.svg" alt="" style="float: right;" id="closeBtn">
+      </div>
+      <div class="title my-modal-title">Thông tin nhân viên</div>
+    </div> -->
+    <form action="" enctype="multipart/form-data" id="addEmployeeForm">
+        <div class="row" style="align-items: flex-start;">
+            <div class="left-modal col-sm-2">
+                <img src="../../Resource/img/default-avatar.jpg" alt="" id="imgavatar" class="modal-avatar">
+                <p>(Vui lòng chọn ảnh có định dạng .jpg, .jpeg, .png, .gif.)</p>
+                <input type="file" style="display: none;" id="avatar">
+            </div>
+            <div class="right-modal col-sm-10">
+                <div class="title2 col main-label">A. THÔNG TIN CHUNG: <div class="green-line"></div></div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="employeeCode">Mã (<span style="color: red;">*</span>)</label>
+                            <div class="search-box">
+                                <input type="text" name="EmployeeCode" id="employeeCode" class="form-input" placeholder="Mã nhân viên" required="required">
+                                <input type="hidden" id="employeeId" name="EmployeeId">
+                                <div class="clearBtn"><img height="13px" src="../../Resource/icon/x.svg" alt=""></div>
+                                <div class="inputMessage">
+                                    <p>Trường này không được để trống</p>
+                                    <div class="bottom"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <div class="form-group">
+                                <label for="fullName">Họ và tên (<span style="color: red;">*</span>)</label>
+                                <div class="search-box">
+                                    <input type="text" name="FullName" id="fullName" class="form-input" placeholder="Họ và tên" required="required">
+                                    <div class="clearBtn"><img height="13px" src="../../Resource/icon/x.svg" alt=""></div>
+                                    <div class="inputMessage">
+                                        <p>Trường này không được để trống</p>
+                                        <div class="bottom"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="dateOfBirth">Ngày sinh</label>
+                            <div class="search-box">
+                                <input type="date" name="DateOfBirth" id="dateOfBirth" class="form-input">
+                                <div class="clearBtn"><img height="13px" src="../../Resource/icon/x.svg" alt=""></div>
+                                <div class="inputMessage">
+                                    <span></span>
+                                    <div class="bottom"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <div class="form-group">
+                                <label for="gender">Giới tính</label>
+                                <div class="my-custom-select" name-value="Gender" name-text="GenderName" id="selectGender">
+                                    <div class="select-selected">
+                                        <input type="text" name="Gender" id="gender" select format="gender">
+                                        <div class="clearBtn"><img height="13px" src="../../Resource/icon/x.svg" alt=""></div>
+                                        <div class="inputMessage">
+                                            <p></p>
+                                            <div class="bottom"></div>
+                                        </div>
+                                    </div>
+                                    <div class="select-items select-hide gender">
+                                        <div value="1" class="same-as-selected">Nam</div>
+                                        <div value="0">Nữ</div>
+                                        <div value="2">Không xác định</div>
+                                    </div>
+                                    <span class="select-icon"><i class="fas fa-chevron-down"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="IdentityNumber">Số CMTND/ Căn cước (<span style="color: red;">*</span>)</label>
+                            <div class="search-box">
+                                <input type="text" input-format="number" name="IdentityNumber" id="identityNumber" class="form-input" placeholder="CNTND/ Căn cước" required="required" format="identity">
+                                <div class="clearBtn"><img height="13px" src="../../Resource/icon/x.svg" alt=""></div>
+                                <div class="inputMessage">
+                                    <p>Trường này không được để trống</p>
+                                    <div class="bottom"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <div class="form-group">
+                                <label for="identityDate">Ngày cấp</label>
+                                <div class="search-box">
+                                    <input type="date" name="IdentityDate" id="identityDate" class="form-input">
+                                    <div class="inputMessage">
+                                        <p></p>
+                                        <div class="bottom"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="identityPlace">Địa chỉ</label>
+                            <div class="search-box">
+                                <input type="text" name="IdentityPlace" id="identityPlace" class="form-input" placeholder="Nơi cấp">
+                                <div class="clearBtn"><img height="13px" src="../../Resource/icon/x.svg" alt=""></div>
+                                <div class="inputMessage">
+                                    <p></p>
+                                    <div class="bottom"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="email">Nghề Nghiệp (<span style="color: red;">*</span>)</label>
+                            <div class="search-box">
+                                <input type="text" name="Email" id="email" class="form-input" placeholder="Nghề nghiệp" required="required" format="email">
+                                <div class="clearBtn"><img height="13px" src="../../Resource/icon/x.svg" alt=""></div>
+                                <div class="inputMessage">
+                                    <p>Trường này không được để trống</p>
+                                    <div class="bottom"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <div class="form-group">
+                                <label for="phoneNumber">Số điện thoại (<span style="color: red;">*</span>)</label>
+                                <div class="search-box">
+                                    <input type="text" input-format="number" name="PhoneNumber" id="phoneNumber" class="form-input" placeholder="Số điện thoại" format="phoneNumber" required="required">
+                                    <div class="clearBtn"><img height="13px" src="../../Resource/icon/x.svg" alt=""></div>
+                                    <div class="inputMessage">
+                                        <p>Trường này không được để trống</p>
+                                        <div class="bottom"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="title2 col main-label">B. THÔNG TIN TIẾP XÚC:<div class="green-line"></div></div>
+                <div class="row">
+                    <!-- <div class="col-sm-6">
+                      <div class="form-group">
+                        <label for="positionId">Vị trí</label>
+                        <div class="my-custom-select" url="http://cukcuk.manhnv.net/v1/Positions" name-value="PositionId" name-text="PositionName">
+                          <div class="select-selected">
+                            <input type="text" id="positionId" name="PositionId" select>
+                            <div class="clearBtn"><img height="13px" src="../../Resource/icon/x.svg" alt=""></div>
+                            <div class="inputMessage">
+                              <p></p>
+                              <div class="bottom"></div>
+                            </div>
+                          </div>
+                          <div class="select-items select-hide">
+                            <div value="1" class="same-as-selected">Giám đốc</div>
+                            <div value="2">Nhân viên kinh doanh</div>
+                            <div value="3">Lập trình viên</div>
+                          </div>
+                          <span class="select-icon"><i class="fas fa-chevron-down"></i></span>
+                        </div>
+                      </div>
+                    </div> -->
+                    <!-- <div class="col-sm-6">
+                      <div class="form-group">
+                        <div class="form-group">
+                          <label for="departmentId">Phòng ban</label>
+                          <div class="my-custom-select" url="http://cukcuk.manhnv.net/api/Department" name-value="DepartmentId" name-text="DepartmentName">
+                            <div class="select-selected">
+                              <input type="text" id="departmentId" name="DepartmentId" select>
+                              <div class="clearBtn"><img height="13px" src="../../Resource/icon/x.svg" alt=""></div>
+                              <div class="inputMessage">
+                                <p></p>
+                                <div class="bottom"></div>
+                              </div>
+                            </div>
+                            <div class="select-items select-hide">
+                            </div>
+                            <span class="select-icon"><i class="fas fa-chevron-down"></i></span>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div> -->
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="personalTaxCode">Những người tiếp xúc</label>
+                            <div class="search-box">
+                                <input type="text" input-format="number" name="PersonalTaxCode" id="personalTaxCode" class="form-input" placeholder="Mã số thuế cá nhân" format="taxCode">
+                                <div class="clearBtn"><img height="13px" src="../../Resource/icon/x.svg" alt=""></div>
+                                <div class="inputMessage">
+                                    <p></p>
+                                    <div class="bottom"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <div class="form-group">
+                                <label for="salary">Những nơi đi qua</label>
+                                <div class="search-box">
+                                    <input type="text" name="Salary" id="salary" class="form-input" placeholder="Những nơi đi qua" format="salary">
+                                    <div class="inputMessage">
+                                        <p></p>
+                                        <div class="bottom"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="joinDate">Ngày tiếp xúc xa nhất</label>
+                            <div class="search-box">
+                                <input type="date" name="JoinDate" id="joinDate" class="form-input">
+                                <div class="inputMessage">
+                                    <p></p>
+                                    <div class="bottom"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <!-- <div class="form-group">
+                          <div class="form-group">
+                            <label for="workStatus">Tình trạng sức khỏe</label>
+                            <div class="my-custom-select" name-value="WorkStatus" name-text="WorkStatusText" id="selectWorkStatus">
+                              <div class="select-selected">
+                                <input type="text" id="workStatus" name="WorkStatus" select>
+                                <div class="clearBtn"><img height="13px" src="../../Resource/icon/x.svg" alt=""></div>
+                                <div class="inputMessage">
+                                  <p></p>
+                                  <div class="bottom"></div>
+                                </div>
+                              </div>
+                              <div class="select-items select-hide gender">
+                                <div value="1" class="same-as-selected">Bình thường</div>
+                                <div value="2">Sốt</div>
+                                <div value="3">Khó thở</div>
+                              </div>
+                              <span class="select-icon"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                          </div>
+                        </div>
+                      </div> -->
+                    </div>
+                </div>
+                <div class="my-modal-bottom">
+                    <div class="cancel" id="cancelBtn">Hủy</div>
+                    <div class="button" id="submitBtn" tabindex="0">
+                        <i class="far fa-save"></i> Lưu
+                    </div>
+                </div>
+            </div>
+    </form>
+</div>
+
+<!-- dialog confirm delete employee  -->
+<div class="mymodal" id="confirm-delete">
+    <div class="my-modal-content">
+        <div class="my-modal-header">
+            <div class="title">Xóa nhân viên</div>
+            <div class="closeBtn">
+                <img src="../../Resource/icon/x.svg" alt="">
+            </div>
+        </div>
+        <div id="m-dialog-delete-employee" title="Xóa nhân viên">
+            <div class="dialog-confirm-content">
+                <div class="confirm-img">
+                    <img src="../../Resource/img/warning.png" alt="" width="30px">
+                </div>
+                <div class="confirm-text"></div>
+            </div>
+            <div class="dialog-confirm-bottom">
+                <div class="cancel">Không</div>
+                <div class="confirm">Có</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- dival JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="../../lib/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!-- jqueryUI script  -->
+<script src="../../lib/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+<!-- my script  -->
+<script src="../js/service/Api.js" type="module"></script>
+<script src="../js/page/index.js" type="module"></script>
+<script src="../js/page/fetchAPI.js" type="module"></script>
+<script src="../js/common/customCombobox.js" type="module"></script>
+</body>
+</html>

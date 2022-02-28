@@ -1,0 +1,25 @@
+.checkbox input{
+    display: none;
+}
+
+.checkbox span{
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: 1px solid #bbb;
+    display: inline-block;
+    text-align: center;
+}
+
+.checkbox span i {
+    opacity: 0;
+    color: #fff;
+}
+
+.checkbox span.active i {
+    opacity: 1;
+}
+
+.checkbox span.active {
+    border-color: #019160;
+}

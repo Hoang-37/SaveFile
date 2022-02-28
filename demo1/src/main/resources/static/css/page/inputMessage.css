@@ -1,0 +1,48 @@
+.my-custom-select .inputMessage, .search-box .inputMessage{
+    /* display: none; */
+    position: absolute;
+    visibility: hidden;
+    background-color: #FF4747;
+    border-radius: 4px;
+    text-align: center;
+    bottom: 110%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+.my-custom-select .inputMessage .bottom, .search-box .inputMessage .bottom{
+    position: absolute;    
+    width: 15px;
+    height: 15px;
+    bottom: -10px;
+    transform: rotate(45deg) translateX(-50%);
+    left: 50%;
+    z-index: 15;
+    background-color: #FF4747;
+}
+
+.select-selected.error, .search-box.error{
+    border-color: #FF4747 !important;
+}
+
+.select-selected.error .inputMessage, .search-box.error .inputMessage{
+    visibility: visible;
+    -webkit-animation: fadein 0.5s;
+    animation: fadein 0.5s;
+}
+
+.inputMessage p {
+    color: #fff;
+    padding: 10px;
+    margin: 0;
+}
+
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}

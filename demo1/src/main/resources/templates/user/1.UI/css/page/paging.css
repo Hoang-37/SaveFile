@@ -1,0 +1,34 @@
+/* paging css */
+.pageable {
+    width: 100%;
+    justify-content: space-between;
+    background-color: #E9EBEE;
+}
+.page {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pageNum {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    padding-top: 10px;
+    border-radius: 50%;
+    margin-left: 5px;
+    margin-right: 5px;
+    border: 1px solid #E5E5E5;
+    cursor: pointer;
+}
+
+.pageNum:hover , .changePage:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.changePage {
+    padding: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 4px;
+}

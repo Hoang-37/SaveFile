@@ -1,0 +1,125 @@
+/* modal css */
+#closeBtn {
+    margin-top: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+.mymodal{
+    display: none;
+    position: fixed;
+    z-index: 5;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: #000000;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.my-modal-content {
+    background-color: #ffffff;
+    margin: auto;
+    width: 1366px;
+    margin-top: 24px;
+    border-radius: 4px;
+}
+
+.right-modal {
+    padding-right: 0 !important;
+}
+
+.left-modal {
+    text-align: center;
+    padding-left: 16px;
+}
+
+.my-modal-header {
+    margin-left: 16px;
+}
+.my-modal-title {
+    padding: 24px 0 24px 0px;
+}
+.modal-avatar {
+    width: 150px;
+    height: 150px;
+    border: 1px solid #dbdeff;
+    border-radius: 50%;
+}
+
+label {
+    margin-bottom: 4px !important;
+}
+/* input field css  */
+.form-group > .search-box {
+    display: block;
+    width: 100%;
+}
+
+.form-input {
+    border: none;
+    width: 100% !important;
+}
+.form-input:focus {
+    outline: none;
+}
+input[name="salary"]{
+    padding-right: 45px !important;
+    text-align: right;
+}
+
+input[type="submit"]{
+    background-color: transparent;
+    color: #ffffff;
+    border: none;
+}
+
+.search-box .clearBtn {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    cursor: pointer;
+    display: none;
+}
+.form-group .search-box span {
+    font-style: italic;
+    opacity: 0.8;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+}
+.form-group .my-custom-select{
+    width: 100%;
+}
+.form-control:focus-within{
+    border-color: #019160 !important;
+}
+.main-label {
+    margin-bottom: 24px;
+}
+
+.green-line {
+    border-top: 3px solid #019160;
+    width: 100px;
+}
+
+.my-modal-bottom {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    height: 60px;
+    margin-top: 24px;
+    background-color: #E9EBEE;
+}
+
+.my-modal-bottom div {
+    margin: 10px 16px;
+}
+
+.cancel {
+    height: 40px;
+    font-size: 13px;
+    padding: 12px 24px;
+    text-align: center;
+    cursor: pointer;
+}

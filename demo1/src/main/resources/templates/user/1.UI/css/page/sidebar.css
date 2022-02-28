@@ -1,0 +1,62 @@
+.left-bar {
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    width: 226px;
+    border-right: 1px solid #E5E5E5;
+    margin-top: 60px;
+    transition: 1s;
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: #ffffff;
+}
+.list-menu {
+    padding-left: 0px;
+}
+
+.menu-item {
+    height: 44px;
+    background-color: #ffffff;
+    color: #454545;
+    font-size: 13px;
+    padding: 12px 0 12px 10px;
+    margin-right: 0px !important;
+    cursor: pointer;
+    flex-wrap: nowrap !important;
+}
+
+.menu-item:hover {
+    background-color: #e5e5e5;
+    color: #000000;
+}
+
+.menu-item .icon {
+    font-size: 20px;
+    padding-right: 10px;
+}
+
+/* minisize sidebar css */
+.buttonMinisize {
+    float: right;
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #BBBBBB;
+    padding: 0 5px;
+    border-radius: 4px 0 0 4px;
+}
+
+.hide {
+    display: none;
+}
+
+.minisize {
+    width: 52px !important;
+}
+
+.changeMargin {
+    margin-left: 52px !important;
+    width: calc(100% - 52px);
+}

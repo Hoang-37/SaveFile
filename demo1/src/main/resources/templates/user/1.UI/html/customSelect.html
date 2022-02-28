@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Resource/font/fontawesome-5.15.1/css/all.min.css">
+    <title>Document</title>
+    <style>
+        .custom-select{
+            width: 200px;
+            position: relative;
+        }
+        .custom-select select {
+            display: none;
+        }
+        .select-selected {
+            background-color: #fff;
+            color: #000;
+            padding: 8px 16px;
+            cursor: pointer;
+            border: 1px solid #bbb;
+            border-radius: 4px;
+            height: 22px;
+        }
+        .select-selected:after{
+            position: absolute;
+            top: 14px;
+            right: 12px;
+            width: 7px;
+            height: 7px;
+            border-top: 3px solid #000;
+            border-right: 3px solid #000;
+            content: "";
+            transform: rotate(-45deg);
+            transition: 0.5s;
+        }
+        .select-selected.select-arrow-active:after {
+            transform: rotate(135deg);
+            top: 10px;
+        }
+        .select-arrow-active{
+            border-color: #019160;
+        }
+        .select-items div {
+            color: #000;
+            padding: 8px 0 8px 36px;
+            height: 22px;
+            border: 1px solid transparent;
+            cursor: pointer;
+        }
+        .select-items {
+            position: absolute;
+            background-color: #fff;
+            top: 100%;
+            left: 0;
+            right: 0;
+            z-index: 99;
+        }
+        .select-hide {
+            display: none;
+        }
+        .select-items div:hover{
+            background-color: #e9ebee;
+        }
+        .same-as-selected{
+            background-color: #019160 !important;
+            color: #fff !important;
+            padding-left: 8px !important;
+        }
+        .same-as-selected:before{
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 8px;
+            margin-right: 10px;
+            margin-left: 10px;
+            border-bottom: 3px solid #fff;
+            border-right: 3px solid #fff;
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body>
+    <div style="display: flex;">
+        <div class="custom-select">
+            <select name="" id="position">
+                <option value="0">Tất cả vị trí</option>
+                <option value="1">Nhân viên</option>
+                <option value="2">Trưởng phòng</option>
+            </select>
+        </div>
+        <div class="custom-select">
+            <select name="" id="position2">
+                <option value="0">Tất cả vị trí</option>
+                <option value="1">Nhân viên</option>
+                <option value="2">Trưởng phòng</option>
+            </select>
+        </div>
+    </div>
+    
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+        var x = document.getElementsByClassName("custom-select");
+        var l = x.length;
+        var selectEle, a;
+        for(var i = 0; i<l; i++){
+            selectEle = x[i].getElementsByTagName("select")[0]; //select
+            var ll = selectEle.length; //number of option
+            // create new custom select 
+            a = document.createElement("div");
+            a.setAttribute("class", "select-selected");
+            a.innerHTML = selectEle.options[selectEle.selectedIndex].innerHTML;
+            x[i].appendChild(a);
+
+            // create options list 
+            var b = document.createElement("div");
+            b.setAttribute("class", "select-items select-hide");
+            for(var j = 0; j < ll; j++){
+                // create option 
+                var c = document.createElement("div");
+                c.innerHTML = selectEle.options[j].innerHTML;
+                if(j == selectEle.selectedIndex)
+                    c.setAttribute("class", "same-as-selected");
+                c.addEventListener("click", (e) => {
+                    var k = e.target;
+                    var a1 = k.parentNode.previousSibling;
+                    a1.innerHTML = k.innerHTML;
+                    var sele1 = a1.previousSibling.previousSibling;
+                    for(var m = 0; m < ll; m++){
+                        if(k.innerHTML == sele1.options[m].innerHTML){
+                            sele1.selectedIndex = m;
+                        }
+                    }
+                    Array.from(k.parentNode.getElementsByClassName("same-as-selected")).forEach(item => {
+                        item.removeAttribute("class");
+                    })
+                    k.setAttribute("class", "same-as-selected");
+                    a.click();
+                })
+                b.appendChild(c);
+            }
+            x[i].appendChild(b);
+
+            a.addEventListener("click", (e) => {
+                e.stopPropagation();
+                closeAllSelect(e.target);  
+                e.target.nextSibling.classList.toggle("select-hide");
+                e.target.classList.toggle("select-arrow-active");          
+            })
+        }
+        function closeAllSelect(elmnt) {
+            var x, y, i, xl, yl, arrNo = [];
+            x = document.getElementsByClassName("select-items");
+            y = document.getElementsByClassName("select-selected");
+            xl = x.length;
+            yl = y.length;
+            for (i = 0; i < yl; i++) {
+                if (elmnt == y[i]) {
+                arrNo.push(i)
+                } else {
+                y[i].classList.remove("select-arrow-active");
+                }
+            }
+            for (i = 0; i < xl; i++) {
+                if (arrNo.indexOf(i)) {
+                x[i].classList.add("select-hide");
+                }
+            }
+        }
+        document.addEventListener("click", closeAllSelect)
+    }, false);
+</script>
+</html>

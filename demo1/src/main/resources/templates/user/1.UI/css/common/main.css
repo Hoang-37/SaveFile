@@ -1,0 +1,87 @@
+@import url(../page/customSelect.css);
+@import url(../page/employeeForm.css);
+@import url(../page/header.css);
+@import url(../page/page.css);
+@import url(../page/paging.css);
+@import url(../page/sidebar.css);
+@import url(../page/table.css);
+
+@font-face{
+    font-family: regular;
+    src: url(../../../Resource/font/GoogleSans-Regular.otf);
+}
+@font-face {
+    font-family: medium;
+    src: url(../../../Resource/font/GoogleSans-Medium.otf);
+}
+
+@font-face {
+    font-family: bold;
+    src: url(../../../Resource/font/GoogleSans-Bold.otf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: regular;
+    font-size: 13px;
+    color: #454545;
+}
+
+/* css active button  */
+.active {
+    background-color: #019160 !important;
+    color: #ffffff !important;
+}
+
+.active .text-menu {
+    color: #ffffff !important;
+    font-family: medium !important;
+}
+
+/* css font style  */
+.title {
+    font-size: 20px;
+    color: #000000;
+    font-family: bold;
+}
+
+.title2 {
+    font-size: 15px;
+    color: #000000;
+    font-family: bold;
+}
+
+/* css input  */
+.search-box {
+    border-radius: 4px;
+    border: 1px solid #bbb;
+    background-color: #ffffff;
+    padding-left: 16px;
+    position: relative;
+    height: 40px;
+}
+select.search-box {
+    height: 40px;
+}
+
+.search-box input {
+    border: none;
+    padding: 8px 8px 8px 0;
+    width: 250px;
+    border-radius: 4px;
+}
+.search-box input:focus {
+    outline: none;  
+}
+
+.search-box:focus-within {
+    border-color: #019160;
+}
+
+::placeholder {
+    color: #bbbbbb;
+    opacity: 1; /* Firefox */
+    font-size: 12px;
+}
+.search-box input:focus::placeholder  {color:transparent;}
